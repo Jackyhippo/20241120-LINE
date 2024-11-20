@@ -23,15 +23,12 @@ bot.on('message', event => {
   } else if (event.message.type === 'location') {
     commandTWGod(event)
   }
-  } else if (event.message.type === 'location') {
-    commandTWGod(event)
-  }
 })
 
 bot.on('postback', event => {
   event.reply('postback:' + event.postback.data)
 })
 
-bot.listen('/', 3000 || process.env.PROT, () => {
+bot.listen('/', process.env.PORT || 3000, () => {
   console.log('機器人啟動')
 })
